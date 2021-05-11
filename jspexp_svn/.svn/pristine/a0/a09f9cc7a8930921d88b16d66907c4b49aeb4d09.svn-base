@@ -1,0 +1,108 @@
+cmd
+java -version
+크롬  
+eclipse download
+C:\z01_weekend
+다운받은 eclipse installer 복사
+C:\z01_weekend\workspace
+C:\z01_weekend\tomcat
+eclipse 설치 위치
+C:\z01_weekend
+eclipse 로딩시,
+1. C:\z01_weekend\workspace 실행..
+
+2. eclipse 기본 환경
+    1) 한글 encoding : utf-8 방식
+       workspace
+       html,css,jsp
+    2) svn 설치(자료공유)
+    	plugin
+	svn 검색
+	https://192.168.0.21/svn/web
+	future/7777
+	
+	team ==> commit  : 소스를 svn에 전송할 때 사용
+	     ==> update to header : 서버에 있는 자료를 local로 받을 때, 사용
+	     ==> refresh cleanup : 소스에 문제가 발생(현재 소스 충돌) locked
+	     		걸렸을 때, 처리할 메뉴
+    replace with ==> latest from repository
+    	 ==> 로컬에 받은 소스와 입력된 소스 상관없이 서버에 있는
+    	 소스로 덮어쓰기 할 때.
+    정상적으로 update가 replace with가 위 메뉴로 처리가 안 될 때
+    	jspexp_svn 삭제 (현재 폴드에 있는 소스 삭제 check)
+    	import ==> svn (check project from svn)	 
+		
+
+	
+
+    3) tomcat(eclipse에서 연동지원 was)
+    	8.0
+	7080 포트 설정
+3. dynamic web project 생성
+	jspexp\src\main\webapp\index.jsp
+	jspexp\src\main\webapp 폴드에서 오른쪽 마우스클릭
+	index.jsp 추가
+
+
+# jsp knowledge map
+0. 기본 java 프로그램에 대한 이해
+    1) 변수, 데이터할당
+    2) 객체(class), 메서드, 필드
+    3) 조건문(if), 반복문(for, while) 
+    4) 상속(기본상속, 추상클래스, 인터페이스)
+    5) 예외처리
+    6) collection, generic : ArrayList<VO>
+    7) 기타 api 사용 :String, Wrapper클래스
+1. 웹에서 client와 server 개념
+2. 웹에서 프로그래밍 처리 방식
+    1) client 서버 호출
+    2) server 클라이언트에 page 전송
+3. page호출과 요청값 처리.
+    1) page호출 방식
+    2) 요청값에 대한 처리 : 
+    	page명?요청key=요청값&요청key2=요청값
+	request(요청객체)
+	request.getParameter("요청key");
+    3) 반응으로 처리
+    	response(반응객체)
+4. client와 server 데이터 처리 
+    1) page scope (서버단 저장)
+    	page, request, session, application
+    2) cookie(클라이언트단 저장)
+5. useBean을 통한 session범위와 함께 데이터 처리
+6. 웹에서의 예외 처리.
+    0) 대체 페이지 지정이나 다른 프로그램을 처리
+    1) http 예외코드 단위 
+       200~299 정상범위
+       404
+       500
+    2) java의 클래스단위 예외 처리
+7. 프로그램 처리
+    1) html코드 + java 
+    	servlet.java : 
+	response(서버에서 클라이언트로 데이터전송/화면전송)
+	html코드 중간에 script개념을 활용해서 java코드를
+	삽입.
+	<% %> : scriptlet
+	<%! %> : declare
+	<%= %> : expression
+    2) el/jstl : jsp의 중급 코드 작성.
+        ${param.요청값}
+        ${paramValues.요청값}
+	<c:set var="변수명" value="할당데이터"/>
+	<c:forEach var="변수명"  begin="1" end="10">
+	<c:forEach var="변수명"  items="${list}">
+	<c:if test="조건문">
+
+
+
+
+
+
+
+
+
+   
+
+
+

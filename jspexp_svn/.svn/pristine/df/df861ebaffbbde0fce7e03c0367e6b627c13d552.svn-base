@@ -1,0 +1,70 @@
+# 생각해봅시다.
+1. 웹 프로그램은 어떤 방식으로 처리되고 진행되는가?
+	front end(html/css,js), back end(java,jsp)
+	컴파일되고 실행되는 위치가 frontend 브라우저
+	컴파일되고 실행되는 위치가 backend was
+	server에서 frontend/backend  클라이언에 전달 처리..
+2. 실제 웹 프로그램 화면에서 처리되는 입력값은 서버에서 어떤 방식으로 처리되는가?
+	웹화면 id:<input type="text" name="id"/> ==> id:[himan]
+	입력하고 submit()버튼 클릭
+	?id=himan : query string
+	request.getParameter("id")
+	id값에 따라서 DB, 조건문에서 의해 원하는 화면 reponse객체로 다시 
+	client 전달한다.
+
+3. 웹 프로그래밍의 기본 변수의 처리 방식은 어떤 것인가?
+	자바
+	String name="홍길동";
+	int age=25;
+	jsp
+	jsp session scope라는 범위를 설정.
+	pageContext.setAttribute("name","홍길동");
+	session.setAttribute("age",25);
+	
+4. MVC 패턴이란 무엇이면 어떤 형식으로 처리되는가?
+	1) jsp는 Model1으로 연습
+	2) MVC 패턴(Model2)
+		Controller(servlet) - 중재자 요청, 모델데이터설정, view를 호출..
+		Model - View(화면 jsp)에 전달할 핵심을 controller에서 선언.
+		View(jsp) - 컨트롤러에 의해서 호출된 최종 화면구성요소..
+			데이터는 controller에서 넘겨준 모델 데이터로 처리한다.
+	3) service(controller와 dao사이에서 데이터의 비지니스 로직 처리),
+	   dao(DB access object)		
+	   
+	==요청==>  controller(servlet) ==> service ==> dao ==> DB서버
+				모델데이터 선언		  <==		  <==     <==    
+	 블라우저 <==   view화면(jsp)선택해서	            
+	 				전송
+5. 전반적인 웹 프로그래밍의 실제적인 프로세스는 무엇인가?
+	1) MVC 패턴에 의해서 화면과 요청으로 호출하고 서버에는 
+		각 단계별로 데이터를 처리하고, 결과화면을 출력 하는 것..
+	
+# 학습목표
+1. 전반적인 웹 프로그램의 프로세스를 이해한다.
+2. 실제적인 jsp에서 처리하는 프로그램의 간단한 예제를 이해 및 사용할 수 있다.
+3. jsp의 기본적인 코드를 이해하고, 단계별로 프로그램의 기능이 변화되는 것을 
+	이해하고 사용할 수 있다.
+
+# 주요코드
+1. 스크립트 : 스크립틀릿, 디클레어, 익스프레션과 자바 변수
+			<% %>     <%! %>  <%=%>
+2. request.getParameter("요청값") ==> ${param.요청값}
+3. session.setAttribute("저장할키",저장할데이터); 
+   session.getAttribute("호출할키");==> ${호출할키}
+4. <jsp:useBean id="" class="" scope=""/>
+5. RequestDispatcher rd = rquest.getRequestDispatcher("페이지");
+   rd.forward(request, response);	   
+
+# 진행내용
+1. java의 변수, 객체 선언, 반복문 선언 : scriptlet
+	session scope의 객체를 통한 변수 선언할당.
+	el을 통한 변수의 활용.
+	jstl을 통한 조건이나 반복문 활용.
+2. form객체와 요청값 처리..
+3. useBean의 처리
+4. MVC 패턴을 통한 화면 호출과 구현..
+
+	
+	
+	
+

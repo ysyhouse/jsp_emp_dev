@@ -1,0 +1,88 @@
+# DB 처리
+1. 생각해봅시다.
+	1) 프로그래밍에 DB처리는 어떤 연관관계가 있는가?
+		프로그래밍(DB client)와 (DB server) 관계에 있다.
+		지속적인 데이터의 조회, 등록, 수정, 삭제 처리.
+	2) 프로그래밍에서 DB처리를 위해서 필요로 하는 환경을 어떤 것이 있는가?
+		공통적인 소스 (드라이버의 설정 - 재활용)
+	 	DB처리에 핵심부분에 코드
+	 	DB서버 (ip, port, sid(DB), 계정, 비밀번호)
+	 	jdbc 드라이버
+	 	lib 등록 메모리 로딩..
+	 	프로그래밍 - 객체 생성, 연결처리...
+	 	DB 서버 조회 처리 client 툴을 통해서 데이터를 효과적을 활용.
+	 	서버에 기존 데이터..
+	3) DB 서버와 연동에서 어떤 문제가 발생할 가망성이 있고
+		이를 위해 프로그램에서 어떤 처리를 하고 있는가?
+		DB서버의 생성이나 연결 문제..
+		예외 처리를 통해서 정상적인 에러 대한 대비..
+		
+	4) 데이터베이스를 결과값을 받을 때, 어떤 처리가 필요할까?
+		등록 create
+		조회 read	 select : 2차원의 테이블 모양으로 처리된다. ResultSet객체로 처리된다.	
+		수정 update
+		삭제 delete
+2. 학습목표
+	1) DB 서버 환경을 구성할 수 있다.
+	2) DB 접속을 위해 프로그램적으로 준비해야할 부분을 알고 설정할 수 있다.
+	3) DB 접속의 기본객체를 이해하고 사용할 수 있다.
+	4) 각 기능 메서드 (연결, 조회, 수정, 삭제)의 기본적인 처리와 공통적인 필드를 알고,
+		사용할 수 있다.
+	5) 각 기능 메서드의 객체의 사용방법을 알고 활용할 수 있다.
+
+3. DB 서버 환경 구성.
+	1) 관리자 비밀번호 1111로 기존 설치
+	2) cmd 
+		sqlplus
+		접속확인
+	3) jdbc 드라이버 복사해서 web-inf lib 하위에 복사 처리
+		c:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar
+		jspexp\src\main\webapp\WEB-INF\lib
+	4) sample 데이터 생성 처리..
+		C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\scott.sql
+		복사해서.
+		계정폴드에 복사해 놓는다.
+	5) scott.sql(scott/tiger 계정 생성,  sample파일 생성) 클릭해서
+		계정 비밀번호를 소문자로 변경. ctrl+s(저장)
+	6) cmd 
+		sqlplus
+		system//1111로 접속후
+		@scott.sql을 통해서 계정과 샘플데이터 생성
+		conn scott/tiger; 접속 후,
+		select * from emp;   데이터 확인.	
+	7) eclipse plugin 설정
+		dbeaver 설치
+		jdbc드라이버 설정
+		connection 설정
+		
+4. 데이터베이스 연결 객체 생성과 확인하기...
+	1) 연결 모듈 클래스 선언.
+	2) 전역변수 : 연결객체, 대화객체, 결과 객체 생성
+	3) 공통메서드 : 연결메서드 처리..
+	4) 모듈 처리의 기본적인 핵심 process
+		- jdbc드라이버를 메모리에 로딩 :    Class.forName("드라이버명")
+			DriverManager를 사용할 수 있는 상황..
+		- 목적지와 대상 DB 서버 선언 : ip, port, 계정/비번
+			DriverManager.getConnection("접속정보","계정","비번")설정
+			결과롤 Connection를 리턴한다.
+		- 각 기능 메서드
+			위에 접속한 공통 메서드를 활용해서.
+			연결객체 ==> 대화객체 ==> 결과 객체 ==> 자원해제 ==> 예외처리.
+5. jsp 화면에서 처리
+	1) DB 처리 DAO 클래스 선언.
+	2) jsp/controller/service에서 해당 객체 호출 기능 메서드를 통해서 화면 출력 처리.
+				
+			
+		
+	
+	
+			
+					
+				
+		
+		
+				
+		
+		
+		
+		

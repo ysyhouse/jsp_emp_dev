@@ -1,0 +1,54 @@
+안녕하세요!
+반갑습니다 신지수입니다.  
+프로그래밍 경험
+1. 현업에서 프론트엔드쪽 2년정도 개발했습니다
+2. 수업은 java,javascript정도 수강했습니다, 
+작년에 한달정도 주말반 javascript수업을 강사님께 들은적이 있습니다 ㅋㅋ
+==> 내가 진행한 수업을 들은 건 아니죠?? javascript수업은 한지 몇년 되었는데?? ^^ 
+3. 개발응용력은 java jsp는 초급입니다
+
+수업목적 및 요청사항
+1. 실무에 자주쓰이는 실습을 많이 하면 좋을것같습니다!
+
+
+
+# 사전평가 정답(~14:10)
+
+1. public static void main(String[] args) {
+	
+	}
+	
+	Ctrl+f11
+	
+2. 
+3. boolean, byte, short, long, int, double,
+float, char
+
+4. ==는 int형 비교 equals: String 비교
+5. 공통으로 사용되는 변수를 쓸때 사용한다
+6. 배열은 크기가 고정되어있지만 arraylist는 사이즈가 변경가능하고
+길이를 구할떄 배열은 length로 구하고 arraylist는 size로 구한다
+
+7. char, int, double
+
+8.  public class VO {
+	private int empno;
+	private String ename;
+	private int sal;
+	private int deptno;
+	
+	}
+	
+9. 값의 타입을 변경하는것
+
+10. 
+
+11. a === b 
+12. int [] a = new int[5];
+13. Person person[] = new Person[3]
+
+
+	
+
+
+ 
